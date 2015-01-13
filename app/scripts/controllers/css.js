@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name AppName.controller:MainCtrl
+ * @name AppName.controller:CssCtrl
  * @description
- * # MainCtrl
+ * # AboutCtrl
  * Controller of the AppName
  */
-app.controller('MainCtrl', function ($scope) {
+app.controller('CssCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
