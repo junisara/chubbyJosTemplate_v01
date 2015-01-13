@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the AppName
  */
-app.controller('ComponentsCtrlCtrl', function ($scope) {
+app.controller('ComponentsCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
