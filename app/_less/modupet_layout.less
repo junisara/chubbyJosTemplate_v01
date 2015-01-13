@@ -1,0 +1,1872 @@
+// out: null, compress: true, strictMath: true
+@charset "utf-8";
+ 
+
+@font    : 'Malgun Gothic','맑은 고딕','돋움',Dotum,"Helvetica Neue",Helvetica,Arial,sans-serif;
+@font_11 : '돋움','Dotum',Menlo,Monaco,Consolas,"Courier New",sans-serif;
+@font_12 : '굴림', Gulim, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+/**************************************************************/
+/* 기본 정의                                              */
+/*** 기본색 및 폰트에 대해 정의 한다.(임의 수정가능)                */
+/**************************************************************/
+/* 기본 색상 정의 (시안) */
+@BASIC_COLOR1  : #32C8DE;  /* @brand-primary - 부트스트랩의 primary의 색상과 동일하게 맞춤 */
+@BASIC_COLOR2  : #dddddd;                     // 기본색의 옵션 색 1
+@BASIC_COLOR3  : #666666;                     // 기본색의 옵션 색 2
+
+ 
+@white   : #fff;
+@gray    : #ddd;
+@black   : #666;
+@red     : #FD593C;
+@green   : #51d466;
+@blue    : #609cec;
+@orange  : #f8a841;
+ 
+
+/**************************************************************/
+/* 사용자 함수 정의                                          */
+/*** 아래의 코드에서 사용할 함수를 정의 한다.                 */
+/**************************************************************/
+/* 폰트사이즈 */
+.px11    {font-family:@font_11;font-size:11px;letter-spacing:-0.02em}
+.px12    {font-family:@font_12;font-size:12px;letter-spacing:-0.02em;}
+.px11()  {font-family:@font_11;font-size:11px;letter-spacing:-0.02em}
+.px12()  {font-family:@font_12;font-size:12px;letter-spacing:-0.02em;}
+
+/* 글자 컬러 */
+/* .text-primary  -- 부트스트랩에서 정의된 primary의 값을 기본값으로 사용함 */
+.text-gray, a.text-gray       {color: #aaa !important;}
+.text-black, a.text-black     {color: #000 !important;}
+.text-red, a.text-red         {color: @red !important;}
+.text-green, a.text-green     {color: @green !important;}
+.text-blue, a.text-blue       {color: @blue !important;}
+.text-orange, a.text-orange   {color: @orange !important;}
+
+/* Background 컬러 */
+/* .bg-primary  -- 부트스트랩에서 정의된 primary의 값을 기본값으로 사용함 */
+.bg-gray, a.bg-gray       {background-color:#aaa !important;}
+.bg-black, a.bg-black     {background-color: #000 !important;}
+.bg-red, a.bg-red         {background-color: @red !important;}
+.bg-green, a.bg-green     {background-color: @green !important;}
+.bg-blue, a.bg-blue       {background-color: @blue !important;}
+.bg-orange, a.bg-orange   {background-color: @orange !important;}
+ 
+
+/* 버튼 컬러 */
+/* .btn-primary  -- 부트스트랩에서 정의된 primary의 값을 기본값으로 사용함 */
+.btn-white  {color:@black;background-color:@white;border-color: darken(@white, 10%);}
+.btn-gray   {color:@black;background-color:@gray;border-color: darken(@gray, 10%);}
+.btn-black  {color:@white;background-color:@black;border-color: darken(@black, 10%);}
+.btn-red    {color:@white;background-color:@red;border-color: darken(@red, 10%);}
+.btn-green  {color:@white;background-color:@green;border-color: darken(@green, 10%);}
+.btn-blue   {color:@white;background-color:@blue;border-color: darken(@blue, 10%);}
+.btn-orange {color:@white;background-color:@orange;border-color: darken(@orange, 10%);}
+.btn-transparent {border: 1px solid #fff!important;background: 0 0!important;color: #fff!important;-webkit-transition: all .5s ease;-moz-transition: all .5s ease;-o-transition: all .5s ease;-ms-transition: all .5s ease;transition: all .5s ease;}
+.btn-round {width: 60px;height: 60px;border-radius: 100%;font-size: 15px;text-align: center;}
+.btn-round i {display: block;margin: 3px 0 2px;}
+
+
+/* 리스트 */
+.list-1, .list-2, .list-3, .list-4, .list-5, .list-6 {
+    list-style-type: none;
+    padding-left: 20px;
+    li:before{
+        font-family: FontAwesome;
+        float: left;
+        margin-left: -20px;
+        color: @BASIC_COLOR1;
+    }
+}
+.list-1 li:before {content: "\f105";}
+.list-2 li:before {content: "\f101";}
+.list-3 li:before {content: "\f0da";}
+.list-4 li:before {content: "\f096";}
+.list-5 li:before {content: "\f14a";}
+
+
+/* 아이콘 박스 */
+.icon-box-1,.icon-box-2 {width: 100%;max-width: 280px;margin: 10px auto;}
+
+.icon-box-1 {
+    text-align: center;
+    i{
+        font-size: 50px;
+        position: relative;
+        top: 10px;
+        margin-bottom: 20px;
+        -webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -o-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        transition: all .4s linear;
+    }
+    h4{
+        font-size: 18px;
+        line-height: 33px;
+    }
+    p{
+        margin: 2px 0 5px;
+        padding: 0;
+    }
+}
+.icon-box-2 {
+    color: @white;
+    background: @BASIC_COLOR1; 
+    padding: 25px;
+    max-width: 280px;
+    text-align: center;    
+    i{       
+        font-size: 50px;
+        position: relative;
+        top: 10px;
+        margin-bottom: 20px;
+        -webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -o-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        transition: all .4s linear;
+    }
+    h4{
+        font-size: 18px;
+        line-height: 33px;
+    }
+    p{
+        margin: 2px 0 5px;
+        padding: 0;
+    }
+}
+ 
+
+
+/* Hilight */
+.highlight-default, .highlight-red, .highlight-green, .highlight-blue, .highlight-orange {
+ color: @white;padding: 1px 4px;
+}
+.highlight-default {background: @BASIC_COLOR1;}
+.highlight-red     {background: @red;}
+.highlight-green   {background: @green;}
+.highlight-blue    {background: @blue;}
+.highlight-orange  {background: @orange;}
+
+
+/* Badges */
+.badge {min-width: 10px;font-size: 12px;line-height: 12px;font-weight: 400;display: inline-block;color: #fff;
+border-radius: 10px;}
+.badge.badge-xs {font-size: 0.7em;padding:0.1em 0.5em;line-height: 1.2em;}
+.badge.badge-sm {font-size: 0.85em;padding:0.1em 0.5em;line-height: 1.2em;}
+.badge.badge-lg {font-size: 1.2em;padding:0.1em 0.5em;line-height: 1.2em;}
+
+.badge.badge-default{color:@white;background-color:@BASIC_COLOR1;}
+.badge.badge-white  {color:@black;background-color:@white;}
+.badge.badge-gray   {color:@black;background-color:@gray;}
+.badge.badge-black  {color:@white;background-color:@black;}
+.badge.badge-red    {color:@white;background-color:@red;}
+.badge.badge-green  {color:@white;background-color:@green;}
+.badge.badge-blue   {color:@white;background-color:@blue;}
+.badge.badge-orange {color:@white;background-color:@orange;}
+
+/* Label */
+.label { border-radius: 2px;font-weight: 400;padding: 3px 7px;font-size: 12px;line-height: 18px;}
+.label.label-xs {font-size: 0.7em;padding:0.1em 0.5em 0.25em;;line-height: 1.2em;}
+.label.label-sm {font-size: 0.85em;padding:0.1em 0.5em 0.2em;line-height: 1.2em;}
+.label.label-lg {font-size: 1.2em;padding:0.1em 0.5em 0.2em;line-height: 1.2em;}
+
+.label.label-default{color:@white;background-color:@BASIC_COLOR1;}
+.label.label-white  {color:@black;background-color:@white;}
+.label.label-gray   {color:@black;background-color:@gray;}
+.label.label-black  {color:@white;background-color:@black;}
+.label.label-red    {color:@white;background-color:@red;}
+.label.label-green  {color:@white;background-color:@green;}
+.label.label-blue   {color:@white;background-color:@blue;}
+.label.label-orange {color:@white;background-color:@orange;}
+
+
+/* m-widget */
+.m-widget {
+    margin-bottom: 20px;
+    h5 {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+    .content ul li {
+        padding-left: 5px;
+        margin: 5px 0;
+    }
+}
+
+
+
+/* @datepicker - requires jquery ui
+----------------------------------------------- */
+.ui-datepicker { 
+	width: 18em;
+	margin-top:8px;
+	display: none;
+	background: #fff;
+	position:relative;
+	font: 14px/1.55  "Roboto", Arial, Helvetica, sans-serif;
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 0 4px rgba(0,0,0,.1);
+	-o-box-shadow: 0 0 4px rgba(0,0,0,.1);
+	box-shadow: 0 0 4px rgba(0,0,0,.1);
+	border:1px solid #CFCFCF;
+	z-index:9999!important;		
+	text-align: center;
+	color: #666;
+	
+}
+
+.ui-datepicker a { color: #404040; text-align:center; }
+.ui-datepicker .ui-state-disabled span{ color:#DBDBDB;}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	background: #F5F5F5;
+	border-bottom:1px solid #CFCFCF;
+	line-height: 27px;
+	font-size: 15px;
+	padding: 10px;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	width: 34px;
+	height: 34px;
+	display: block;
+	font-size: 14px;
+	position: absolute;
+	text-decoration: none;
+	cursor: pointer;
+	color:#4ebd4a;
+	top:20.5%;
+}
+
+.ui-datepicker .ui-datepicker-prev { left: 2px;  }
+.ui-datepicker .ui-datepicker-next { right: 2px; }
+.ui-datepicker .ui-datepicker-title { 
+	margin: 0 2.3em; 
+	line-height: 1.8em; 
+	text-align: center;
+	color:#4ebd4a; 
+}
+
+.ui-datepicker .ui-datepicker-title select { font-size: 1em; margin: 1px 0; }
+.ui-datepicker select.ui-datepicker-month-year { width: 100%; }
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year { width: 40%; }
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	margin: 0 0 .4em;
+	border-collapse: collapse;
+}
+
+.ui-datepicker th {
+	padding: .5em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+
+.ui-datepicker td { border: 0; padding:2px 5px; }
+.ui-datepicker td span,
+.ui-datepicker td a {
+	padding: .25em;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+.ui-datepicker td span:hover,
+.ui-datepicker td a:hover {  background:#F5F5F5; }
+.ui-datepicker .ui-state-disabled span:hover{ background:none; }
+.ui-datepicker-today a, .ui-datepicker-today a:hover, 
+.ui-datepicker .ui-state-highlight {
+	font-weight: 700;
+	background: #4ebd4a!important;
+	color:#fff;
+}
+
+/* @multiple calendars || not responsive use carefully 
+--------------------------------------------------------------- */
+.cal-widget .ui-datepicker { width: 100%; margin-top:0; }
+.cal-widget .ui-datepicker:before{ display:none; }
+.ui-datepicker.ui-datepicker-multi { width: auto; }
+.ui-datepicker-multi .ui-datepicker-group { float: left; }
+.ui-datepicker-multi .ui-datepicker-group table { width: 95%; margin: 0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width: 50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width: 33.333%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width: 25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width: 0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear: left; }
+.ui-datepicker-row-break { clear: both; width: 100%; font-size: 0; }
+
+
+/* Form */
+/* @crossbrowser placeholder styling :: modern browsers only IE10+
+------------------------------------------------------------------------ */
+.forms {
+    input[type=search] { -webkit-appearance: textfield; }
+    ::-webkit-search-decoration, 
+    ::-webkit-search-cancel-button { -webkit-appearance: none; }
+    input,textarea,select{ -moz-box-shadow: none; box-shadow: none; .px11()  }
+    input:invalid { -moz-box-shadow: none; box-shadow: none;  }
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder { color: #AAAAAA; }
+    input:focus::-webkit-input-placeholder,
+    textarea:focus::-webkit-input-placeholder { color: #D6DBE0; }
+    input:-moz-placeholder,
+    textarea:-moz-placeholder { color: #AAAAAA; }
+    input:focus:-moz-placeholder,
+    textarea:focus:-moz-placeholder { color: #D6DBE0; }
+    input::-moz-placeholder,
+    textarea::-moz-placeholder { color: #AAAAAA; opacity: 1; }
+    input:focus::-moz-placeholder,
+    textarea:focus::-moz-placeholder { color: #D6DBE0; opacity: 1; }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder { color: #AAAAAA; }
+    input:focus:-ms-input-placeholder,
+    textarea:focus:-ms-input-placeholder { color: #D6DBE0; }
+
+    .field {
+        display: block;
+        position: relative;
+    }
+    .option {
+        border: 1px #ddd solid;       
+        .title {
+            margin-right: 20px;
+            line-height: 42px;
+            height: 100%;
+            min-width: 110px;
+            background: #f7f7f7;
+            padding: 0 14px;
+            display: inline-block;
+            
+        }
+        label{
+            font-weight: 400;
+            margin-right: 30px;
+        }
+        input {
+            height: inherit;
+            width: 0;
+            opacity: 0;
+        }
+        i {
+            width:26px;
+            color:#ccc;
+            vertical-align: middle;
+        }
+    }
+    
+    .confirm {
+        border: 0;
+        border-top: 1px #ccc solid;
+    }
+    .form-group {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        width: 100%;
+        font-weight: 400; 
+        margin-bottom: 25px;
+        .inputfield-icon {
+            top: 0;
+            left: 0;
+            z-index: 4;
+            width: 42px;
+            height: 42px;
+            color: inherit;
+            line-height: 42px;
+            position: absolute;
+            text-align: center;
+            -webkit-transition: all 0.5s ease-out;
+            -moz-transition: all 0.5s ease-out;
+            -ms-transition: all 0.5s ease-out;
+            -o-transition: all 0.5s ease-out;
+            transition: all 0.5s ease-out;
+            pointer-events: none;
+            i {color: #bbb}
+        }
+        .controls input, .controls textarea, .controls select{
+            padding-left: 36px;
+        } 
+        .help-text {
+            display: none;
+            .px11()
+        }
+
+        select {
+            background: #F5F5F5;
+         /*    -webkit-appearance: none;
+         -moz-appearance: none;
+         appearance: normal; */
+            outline: none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            z-index: 10;
+            margin: 0;
+        }
+        .file {
+
+            .button {
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                float: none;
+                height: 34px;
+                line-height: 34px;
+                padding: 0 16px;
+                z-index: 10;
+            }
+            .gui-file {
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                padding: 8px 10px;
+                position: absolute;
+                -moz-opacity: 0;
+                opacity: 0;
+                z-index: 11;
+                bottom: 0;
+                right: 0;
+            }
+             .gui-input {
+                padding: 10px;
+                padding-left: 36px;
+                font-weight: 400;
+            }
+            .select, .gui-input, .gui-textarea, .select > select, .select-multiple select {
+                background: #fff;
+                position: relative;
+                vertical-align: top;
+                border: 1px solid #CFCFCF;
+                display: -moz-inline-stack;
+                display: inline-block;
+                color: #626262;
+                outline: none;
+                height: 42px;
+                width: 100%;
+            }
+
+        }
+        .button {
+            border: 0;
+            height: 42px;
+            font-weight: 400;
+            color: #243140;
+            line-height: 1;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 0 18px;
+            text-align: center;
+            vertical-align: top;
+            background: #DBDBDB;
+            display: inline-block;
+            -webkit-user-drag: none;
+            text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+        }
+    }
+    /* @toggle switch elements 
+-------------------------------------------------- */
+ .switch { 
+	cursor:pointer; 
+	position: relative; 
+	padding-right:10px;
+    display: inline-block;
+	margin-bottom:5px;
+	height: 26px;
+}
+ .switch > label {
+	cursor:pointer;
+    display: inline-block;
+    position: relative;
+    height: 25px;
+	width: 58px;
+	color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+	line-height: 20px;
+    text-align: center;
+    background: #D7D7D7;
+    border: 2px solid #D7D7D7;
+	text-transform: uppercase;
+	font-family:Helvetica, Arial, sans-serif;
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+	
+}
+ .switch > label + span{ display:inline-block; padding-left:5px; position:relative; top:-7px; }
+ .switch > label:before {
+    content: attr(data-off);
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    width: 33px;
+}
+
+ .switch > label:after {
+	content:"";	
+    margin: 1px;
+    width: 19px;
+    height: 19px;
+	display: block;
+    background: #fff;
+}
+
+ .switch > input {
+	-webkit-appearance: none;
+	position: absolute;
+    width: inherit;
+    height: inherit;
+    opacity: 0;
+	left: 0;
+	top: 0;
+   
+}
+
+    /* @toggle switch focus state 
+    -------------------------------------------------------------- */
+     .switch > input:focus { outline: none; }
+     .switch > input:focus + label { color: #fff; border-color: #C7C7C7; background:#C7C7C7; }
+     .switch > input:focus + label:after { background: #fff; }
+
+    /* @toggle switch normal state 
+    --------------------------------------------------------------- */
+     .switch > input:checked + label {
+        border-color: #4ebd4a;
+        background: #4ebd4a; 
+        padding-left: 33px;
+        color: white;
+    }
+
+     .switch > input:checked + label:before {
+        content: attr(data-on);
+        left: 1px;
+        top:1px;
+    }
+
+     .switch > input:checked + label:after {
+        margin: 1px;
+        width: 19px;
+        height: 19px;
+        background: white;
+    }
+
+    /* @toggle switch normal state focus 
+    --------------------------------------------------------------------------------- */
+     .switch > input:checked:focus + label { background: #3c9b39; border-color: #3c9b39; }
+     .switch-round > label { 
+        -webkit-border-radius: 13px;
+        -moz-border-radius: 13px;
+        -o-border-radius: 13px;
+        border-radius: 13px; 
+    }
+     .switch-round > label + span{ top:-2px; }
+     .switch-round > label:before { width: 33px; }
+     .switch-round > label:after {
+        width: 19px;
+        color:#D7D7D7;
+        content: "\2022";
+        font:20px/20px Times, Serif;
+        -webkit-border-radius: 13px;
+        -moz-border-radius: 13px;
+        -o-border-radius: 13px;
+        border-radius: 13px;
+    }
+
+     .switch-round > input:checked + label { padding-left: 33px; }
+     .switch-round > input:checked + label:after{ color:#4ebd4a; }
+
+}
+
+
+
+
+
+
+/*
+@form body + footer
+-------------------------------------------------------------------
+.forms .form-body{ padding:40px 30px; padding-bottom:20px; }
+.forms .form-footer {
+    overflow:hidden;
+    padding:20px 25px;
+    padding-top:25px;
+    background: #F5F5F5;
+    background: #F5F5F5 url(../images/foobg.png) top left repeat-x;
+}
+
+@crossbrowser placeholder styling :: modern browsers only IE10+
+------------------------------------------------------------------------
+.forms input[type=search] { -webkit-appearance: textfield; }
+.forms ::-webkit-search-decoration,
+.forms ::-webkit-search-cancel-button { -webkit-appearance: none; }
+.forms input:invalid { -moz-box-shadow: none; box-shadow: none;  }
+.forms input::-webkit-input-placeholder,
+.forms textarea::-webkit-input-placeholder { color: #AAAAAA; }
+.forms input:focus::-webkit-input-placeholder,
+.forms textarea:focus::-webkit-input-placeholder { color: #D6DBE0; }
+.forms input:-moz-placeholder,
+.forms textarea:-moz-placeholder { color: #AAAAAA; }
+.forms input:focus:-moz-placeholder,
+.forms textarea:focus:-moz-placeholder { color: #D6DBE0; }
+.forms input::-moz-placeholder,
+.forms textarea::-moz-placeholder { color: #AAAAAA; opacity: 1; }
+.forms input:focus::-moz-placeholder,
+.forms textarea:focus::-moz-placeholder { color: #D6DBE0; opacity: 1; }
+.forms input:-ms-input-placeholder,
+.forms textarea:-ms-input-placeholder { color: #AAAAAA; }
+.forms input:focus:-ms-input-placeholder,
+.forms textarea:focus:-ms-input-placeholder { color: #D6DBE0; }
+
+@element general styling :: fonts :: adjust accordingly
+-------------------------------------------------------------
+.forms label,
+.forms input,
+.forms button,
+.forms select,
+.forms textarea {
+    margin: 0;
+    font-size: 14px;
+    font-weight:400;
+    color: #626262;
+    outline:none;
+}
+
+@remove browser specific styling
+-----------------------------------------------
+.forms .gui-input,
+.forms .gui-textarea,
+.forms .select > select,
+.forms input[type="button"],
+.forms input[type="submit"],
+.forms input[type="search"],
+.forms .select-multiple select {
+    -webkit-tap-highlight-color:transparent;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius:0px;
+    border-radius: 0px;
+}
+
+.forms input[type="search"]::-webkit-search-decoration,
+.forms input[type="search"]::-webkit-search-cancel-button,
+.forms input[type="search"]::-webkit-search-results-button,
+.forms input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+@labels font-size styling :: adjust to fit your needs
+---------------------------------------------------------
+.forms .switch,
+.forms .option,
+.forms .field-label{ font-size:14px; }
+
+@prevent user selection for usability purposes
+-----------------------------------------------------
+.forms .radio,
+.forms .button,
+.forms .checkbox,
+.forms .select .arrow,
+.forms .switch > label,
+.forms .ui-slider .ui-slider-handle{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@universal rules for all elements
+----------------------------------------------------
+.forms .radio,
+.forms .button,
+.forms .tooltip,
+.forms .checkbox,
+.forms .gui-input,
+.forms .notification,
+.forms .gui-textarea,
+.forms .select > select,
+.forms .select-multiple select{
+    -webkit-transition:all 0.5s ease-in-out;
+    -moz-transition:all 0.5s ease-in-out;
+    -ms-transition:all 0.5s ease-in-out;
+    -o-transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    outline:none;
+}
+
+@control border-size :: color etc for these elements
+-----------------------------------------------------------
+.forms .select,
+.forms .gui-input,
+.forms .gui-textarea,
+.forms .select > select,
+.forms .select-multiple select{
+    background: #fff;
+    position: relative;
+    vertical-align: top;
+    border: 1px solid #CFCFCF;
+    display: -moz-inline-stack;
+    display: inline-block;
+    *display: inline;
+    color: #626262;
+    outline:none;
+    height: 42px;
+    width: 100%;
+    *zoom: 1;
+}
+
+@styling inputs and textareas
+-------------------------------------------
+.forms .gui-input,
+.forms .gui-textarea { padding:10px; }
+.forms .gui-textarea {
+    resize: none;
+    line-height: 19px;
+    overflow: auto;
+    max-width:100%;
+    height: 96px;
+}
+
+@hint below textareas
+----------------------------------------
+.forms .input-hint {
+    padding: 10px;
+    display: block;
+    margin-top: -1px;
+    line-height: 16px;
+    position: relative;
+    background: #F5F5F5;
+    border: 1px solid #CFCFCF;
+    font-family:Arial, Helvetica, sans-serif;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    font-size: 11px;
+    color: #999;
+}
+
+@form selects :: dropdowns
+--------------------------------------------------
+.forms .select { border:0; z-index:10; }
+.forms .select > select {
+    display: block;
+    padding:9px 10px;
+    color: #626262;
+    background: #F5F5F5;
+     border: 1px solid #CFCFCF;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:normal;
+    outline:none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    z-index:10;
+    margin: 0;
+}
+
+.forms .select > select::-ms-expand { display: none; }
+.forms .select .arrow {
+    position: absolute;
+    top: 9px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    color:#9F9F9F;
+    pointer-events:none;
+    z-index:16;
+}
+
+.forms .select .arrow:after,
+.forms .select .arrow:before {
+    content: '';
+    position: absolute;
+    font:12px "Consolas", monospace;
+    font-style:normal;
+    pointer-events:none;
+    display:none\9;
+    left:5px;
+
+}
+
+.forms .select .arrow:before { content:'\25BC'; bottom:4px; }
+.forms .select .double:after { content:'\25B2'; top:-1px;  }
+.forms .select .double:before { content:'\25BC'; bottom:-1px; }
+.forms .select-multiple select {
+    width:100%;
+    height: 123px;
+    padding: 10px;
+}
+
+@file inputs :: file uploaders
+--------------------------------------------------------
+.forms .file{ display:block; width:100%; }
+.forms .file .gui-file{
+    width:100%;
+    height:100%;
+    cursor:pointer;
+    padding:8px 10px;
+    position:absolute;
+    -moz-opacity:0;
+    opacity: 0;
+    z-index:11;
+    bottom:0;
+    right:0;
+}
+
+.forms .file .button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    float: none;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 16px;
+    z-index:10;
+}
+
+@form element :hover state
+--------------------------------------------
+.forms .gui-input:hover,
+.forms .gui-textarea:hover,
+.forms .select > select:hover,
+.forms .select-multiple select:hover,
+.forms .gui-input:hover ~ .input-hint,
+.forms .file .gui-file:hover + .gui-input,
+.forms .gui-textarea:hover ~ .input-hint{
+    border-color: #6BC868;
+}
+
+@form element :focus state
+--------------------------------------------------------
+.forms .gui-input:focus,
+.forms .gui-textarea:focus,
+.forms .select > select:focus,
+.forms .select-multiple select:focus{
+    color: #3c3c3c;
+    background: #fff;
+    border:1px solid #4EBD4A;
+    -webkit-box-shadow:0px 0px 3px #4EBD4A inset;
+    -moz-box-shadow:0px 0px 3px #4EBD4A inset;
+    -o-box-shadow:0px 0px 3px #4EBD4A inset;
+    box-shadow:0px 0px 3px #4EBD4A inset;
+    outline: none;
+
+}
+
+.forms .select > select:focus {
+    z-index:10;
+    z-index:20\9;
+}
+
+.forms .gui-textarea:focus{  height: 120px; }
+.forms .select > select:focus { z-index:10; z-index:20\9; }
+.forms .gui-input:focus ~ .field-icon i,
+.forms .gui-textarea:focus ~ .field-icon i{ color:#4EBD4A; }
+.forms .select-multiple select:focus,
+.forms .gui-input:focus ~ .input-hint,
+.forms .gui-textarea:focus ~ .input-hint,
+.forms .file .gui-file:focus + .gui-input{ border-color: #4EBD4A; }
+.forms .select > select:focus + .arrow{ color:#4EBD4A; }
+
+
+@radio + checkbox option elements
+-----------------------------------------------------
+.forms .option {
+    position: relative;
+    padding-right:15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.forms .option > input {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    opacity: 0;
+    left: 0;
+}
+
+.forms .checkbox,
+.forms .radio {
+    position:relative;
+    margin-right:2px;
+    background: #fff;
+    display: inline-block;
+    border: 3px solid #CFCFCF;
+    height: 21px;
+    width: 21px;
+    top:4px;
+}
+
+.forms .checkbox:before,
+.forms .radio:before {
+    content: '';
+    display: none;
+}
+
+.forms input:checked + .checkbox:before,
+.forms input:checked + .radio:before {
+    display: block;
+}
+
+.forms .checkbox:before {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    width: 6px;
+    height: 3px;
+    border: solid #4ebd4a;
+    border-width: 0 0 3px 3px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.forms input:checked + .checkbox,
+.forms input:checked + .radio{ border: 3px solid #4ebd4a; }
+.forms .radio {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+
+}
+.forms .radio:before {
+    margin: 4px;
+    width: 7px;
+    height: 7px;
+    background: #4ebd4a;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+@radio + checkbox :hover state
+--------------------------------------------------
+.forms input:hover + .checkbox,
+.forms input:hover + .radio{
+    border-color:#6BC868;
+
+}
+
+@radio + checkbox :focus state
+---------------------------------------------------
+.forms input:focus + .checkbox,
+.forms input:focus + .radio{ border-color: #4ebd4a; }
+.forms input:focus + .radio:before{ background: #4ebd4a; }
+.forms input:focus + .checkbox:before{ border-color: #4ebd4a; }
+
+@toggle switch elements
+--------------------------------------------------
+.forms .switch {
+    cursor:pointer;
+    position: relative;
+    padding-right:10px;
+    display: inline-block;
+    margin-bottom:5px;
+    height: 26px;
+}
+.forms .switch > label {
+    cursor:pointer;
+    display: inline-block;
+    position: relative;
+    height: 25px;
+    width: 58px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    background: #D7D7D7;
+    border: 2px solid #D7D7D7;
+    text-transform: uppercase;
+    font-family:Helvetica, Arial, sans-serif;
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+
+}
+.forms .switch > label + span{ display:inline-block; padding-left:5px; position:relative; top:-7px; }
+.forms .switch > label:before {
+    content: attr(data-off);
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    width: 33px;
+}
+
+.forms .switch > label:after {
+    content:"";
+    margin: 1px;
+    width: 19px;
+    height: 19px;
+    display: block;
+    background: #fff;
+}
+
+.forms .switch > input {
+    -webkit-appearance: none;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    opacity: 0;
+    left: 0;
+    top: 0;
+
+}
+
+@toggle switch focus state
+--------------------------------------------------------------
+.forms .switch > input:focus { outline: none; }
+.forms .switch > input:focus + label { color: #fff; border-color: #C7C7C7; background:#C7C7C7; }
+.forms .switch > input:focus + label:after { background: #fff; }
+
+@toggle switch normal state
+---------------------------------------------------------------
+.forms .switch > input:checked + label {
+    border-color: #4ebd4a;
+    background: #4ebd4a;
+    padding-left: 33px;
+    color: white;
+}
+
+.forms .switch > input:checked + label:before {
+    content: attr(data-on);
+    left: 1px;
+    top:1px;
+}
+
+.forms .switch > input:checked + label:after {
+    margin: 1px;
+    width: 19px;
+    height: 19px;
+    background: white;
+}
+
+@toggle switch normal state focus
+---------------------------------------------------------------------------------
+.forms .switch > input:checked:focus + label { background: #3c9b39; border-color: #3c9b39; }
+.forms .switch-round > label {
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -o-border-radius: 13px;
+    border-radius: 13px;
+}
+.forms .switch-round > label + span{ top:-2px; }
+.forms .switch-round > label:before { width: 33px; }
+.forms .switch-round > label:after {
+    width: 19px;
+    color:#D7D7D7;
+    content: "\2022";
+    font:20px/20px Times, Serif;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -o-border-radius: 13px;
+    border-radius: 13px;
+}
+
+.forms .switch-round > input:checked + label { padding-left: 33px; }
+.forms .switch-round > input:checked + label:after{ color:#4ebd4a; }
+
+@buttons
+-----------------------------------------------------
+.forms .button {
+    border: 0;
+    height: 42px;
+    color: #243140;
+    line-height: 1;
+    font-size:15px;
+    cursor: pointer;
+    padding: 0 18px;
+    text-align: center;
+    vertical-align: top;
+    background: #DBDBDB;
+    display: inline-block;
+    -webkit-user-drag: none;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+}
+
+@buttons :hover, :active states
+----------------------------------------------------------------
+.forms .button:hover { color: #243140; background: #E8E8E8; }
+.forms .button:active{ color: #1d2938; background: #C4C4C4; }
+.forms a.button,
+.forms span.button,
+.forms label.button { line-height: 42px; text-decoration: none; }
+.forms .button i{ font-size:14px; }
+.forms .button-list .button{ margin-bottom:5px; }
+
+@primary button theme
+--------------------------------------------
+.forms .btn-primary {  background-color: #4ebd4a;  }
+.forms .btn-primary:hover,
+.forms .btn-primary:focus { background-color: #6bc868; }
+.forms .btn-primary:active{ background-color: #3c9b39; }
+.forms .btn-primary,
+.forms .btn-primary:hover,
+.forms .btn-primary:focus,
+.forms .btn-primary:active{ color: #fff; text-shadow: 0 1px rgba(0, 0, 0, 0.08); }
+
+@rounded buttons
+--------------------------------------------
+.forms .btn-rounded{
+    -webkit-border-radius:22px;
+    -moz-border-radius:22px;
+    -o-border-radius:22px;
+    border-radius:22px;
+}
+
+@left + right buttons :: look like IOS
+--------------------------------------------
+.forms .button-left,
+.forms .button-right {
+    position: relative;
+    z-index:9;
+}
+
+.forms .button-left:before,
+.forms .button-right:before {
+    content:'';
+    z-index:-1;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background-color: inherit;
+    border-color: inherit;
+    border: none;
+    top: 5px;
+}
+
+.forms .button-left {
+    border-left-width: 0;
+    padding: 0 18px 0 7px;
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    -o-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+    margin-left:20px;
+}
+
+.forms .button-left:before {
+    left: -15px;
+    -webkit-border-radius: 2px 5px 0 5px;
+    -moz-border-radius: 2px 5px 0 5px;
+    -o-border-radius: 2px 5px 0 5px;
+    border-radius: 2px 5px 0 5px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.forms .button-right {
+    padding: 0 7px 0 18px;
+    border-right-width: 0;
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    -o-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+    margin-right:20px;
+}
+
+.forms .button-right:before {
+    right: -15px;
+    -webkit-border-radius: 5px 2px 5px 0;
+    -moz-border-radius: 5px 2px 5px 0;
+    -o-border-radius: 5px 2px 5px 0;
+    border-radius: 5px 2px 5px 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+@left right button pointed button shapes
+------------------------------------------------
+.forms .btn-pointed.button-left,
+.forms .btn-pointed.button-right{
+    -webkit-border-radius:22px;
+    -moz-border-radius:22px;
+    -o-border-radius:22px;
+    border-radius:22px;
+}
+
+.forms .btn-rounded.button-left{
+    -webkit-border-radius: 0 22px 22px 0;
+    -moz-border-radius: 0 22px 22px 0;
+    -o-border-radius: 0 22px 22px 0;
+    border-radius: 0 22px 22px 0;
+}
+
+.forms .btn-rounded.button-right{
+    -webkit-border-radius: 22px 0 0 22px;
+    -moz-border-radius: 22px 0 0 22px;
+    -o-border-radius: 22px 0 0 22px;
+    border-radius: 22px 0 0 22px;
+}
+
+@push buttons
+------------------------------------------------
+.forms .pushed {
+    -webkit-box-shadow:inset 0 -0.3em 0 rgba(0,0,0,0.2);
+    -moz-box-shadow:inset 0 -0.3em 0 rgba(0,0,0,0.2);
+    -o-box-shadow:inset 0 -0.3em 0 rgba(0,0,0,0.2);
+    box-shadow:inset 0 -0.3em 0 rgba(0,0,0,0.2);
+    position:relative;
+}
+
+.forms .pushed:active{
+    -webkit-box-shadow:inset 0 -0.15em 0 rgba(0,0,0,0.2);
+    -moz-box-shadow:inset 0 -0.15em  0 rgba(0,0,0,0.2);
+    -o-box-shadow:inset 0 -0.15em  0 rgba(0,0,0,0.2);
+    box-shadow:inset 0 -0.15em  0 rgba(0,0,0,0.2);
+    top:2px;
+}
+
+.forms .pushed.button-left:before {
+    -webkit-box-shadow:inset 0.35em 0  0 rgba(0,0,0,0.2);
+    -moz-box-shadow:inset 0.35em 0 0 rgba(0,0,0,0.2);
+    -o-box-shadow:inset 0.35em 0 0 rgba(0,0,0,0.2);
+    box-shadow:inset 0.35em 0 0 rgba(0,0,0,0.2);
+}
+
+.forms .pushed:active.button-left:before{
+    -webkit-box-shadow:inset 0.2em 0  0 rgba(0,0,0,0.2);
+    -moz-box-shadow:inset 0.2em 0  0 rgba(0,0,0,0.2);
+    -o-box-shadow:inset 0.2em 0  0 rgba(0,0,0,0.2);
+    box-shadow:inset 0.2em 0  0 rgba(0,0,0,0.2);
+}
+
+.forms .pushed.button-right:before {
+    -webkit-box-shadow:inset  -0.35em 0  0 rgba(0,0,0,0.2);
+    -moz-box-shadow:inset -0.35em 0  0  rgba(0,0,0,0.2);
+    -o-box-shadow:inset -0.35em 0  0  rgba(0,0,0,0.2);
+    box-shadow:inset -0.35em 0  0  rgba(0,0,0,0.2);
+}
+
+.forms .pushed:active.button-right:before{
+    -webkit-box-shadow:inset -0.2em 0  0 rgba(0,0,0,0.2);
+    -moz-box-shadow:inset -0.2em 0  0 rgba(0,0,0,0.2);
+    -o-box-shadow:inset -0.2em 0  0 rgba(0,0,0,0.2);
+    box-shadow:inset -0.2em 0  0 rgba(0,0,0,0.2);
+}
+
+@adjust buttons in form footer
+------------------------------------------------
+.forms .form-footer .button{ margin-right:10px; margin-bottom:5px; }
+.forms .align-right .button{ margin-right:0; margin-left:10px; }
+
+@social buttons :: facebook :: twitter :: google +
+----------------------------------------------------
+.forms .twitter,
+.forms .twitter:hover,
+.forms .twitter:focus,
+.forms .facebook,
+.forms .facebook:hover,
+.forms .facebook:focus,
+.forms .googleplus,
+.forms .googleplus:hover,
+.forms .googleplus:focus { color:#fff; text-shadow: 0 1px rgba(0, 0, 0, 0.08); }
+.forms .facebook { background-color:#3b5998; }
+.forms .twitter { background-color:#00acee;  }
+.forms .googleplus { background-color:#dd4b39; }
+.forms .facebook:hover,
+.forms .facebook:focus { background-color:#25385F;  }
+.forms .twitter:hover,
+.forms .twitter:focus { background-color:#00749F;  }
+.forms .googleplus:hover,
+.forms .googleplus:focus { background-color:#8D2418;  }
+.forms .span-left{ padding-left:52px; text-align:left; }
+.forms .btn-social { position:relative; margin-bottom:5px;  }
+.forms .btn-social i{ font-size:22px; position:relative; top:2px;    }
+.forms .btn-social span{
+    -webkit-border-radius:3px 0 0 3px;
+    -moz-border-radius:3px 0 0 3px;
+    -o-border-radius:3px 0 0 3px;
+    border-radius:3px 0 0 3px;
+    display:inline-block;
+    text-align:center;
+    position:absolute;
+    width:42px;
+    left:0;
+}
+
+.forms .twitter span{ background-color:#009AD5; }
+.forms .facebook span{ background-color:#31497D; }
+.forms .googleplus span{ background-color:#C03121; }
+
+@rating and review star widget :: with hover back afetr selecting
+------------------------------------------------------------------------
+.forms .rating { overflow: hidden; }
+.forms .rating.block { display:block; margin:10px 0; }
+.forms .rating label{color: #A2A6A8;}
+.forms .rating label i{ font-size:17px; text-align:center; color:inherit;  }
+.forms .rating label span{ font:22px/22px Times, Serif; }
+.forms .rating-star{ margin-left:4px; }
+.forms .rating-input { position: absolute; left:-9999px; top: auto; }
+.forms .rating:hover .rating-star:hover,
+.forms .rating:hover .rating-star:hover ~ .rating-star,
+.forms .rating-input:checked ~ .rating-star { color: #4ebd4a; }
+.forms .rating-star,
+.forms .rating:hover .rating-star {
+    width: 18px;
+    float: right;
+    display: block;
+    cursor:pointer;
+    color: #A2A6A8;
+}
+
+
+@smart widget
+   @this widget helps us to position an element eg button or label or span
+   @the positions can either be left or right while the input stays 100%
+   @you ca use this to rapidly create search widgets, newsletter subscribe etc
+---------------------------------------------------------------------------------
+.forms .smart-widget,
+.forms .append-picker-icon,
+.forms .prepend-picker-icon { position: relative; display:block; }
+.forms .smart-widget .field input,
+.forms .append-picker-icon input,
+.forms .prepend-picker-icon input { width: 100%; }
+
+.forms .append-picker-icon button,
+.forms .prepend-picker-icon button,
+.forms .smart-widget .button {
+    border:1px solid #CFCFCF;
+    background: #F5F5F5;
+    position: absolute;
+    cursor: pointer;
+    color: #626262;
+    height: 42px;
+    top: 0;
+}
+
+.forms .sm-right .button,
+.forms .append-picker-icon button{ border-left:0; }
+.forms .sm-left .button,
+.forms .prepend-picker-icon button{ border-right:0; }
+
+.forms .sm-left .button,
+.forms .prepend-picker-icon button { left:0; }
+.forms .sm-right .button,
+.forms .append-picker-icon button {  right:0; }
+
+@smart widget buttons - to left
+-------------------------------------------------
+.forms .sml-50,
+.forms .prepend-picker-icon { padding-left: 50px; }
+.forms .sml-50 .button,
+.forms .prepend-picker-icon button{ width: 50px; }
+.forms .sml-80{ padding-left: 80px; }
+.forms .sml-80 .button { width: 80px; }
+.forms .sml-120{ padding-left: 120px; }
+.forms .sml-120 .button { width: 120px; }
+
+@smart widget buttons - to right
+-------------------------------------------------
+.forms .smr-50,
+.forms .append-picker-icon{ padding-right: 50px; }
+.forms .smr-50 .button,
+.forms .append-picker-icon button{ width: 50px; }
+.forms .smr-80{ padding-right: 80px; }
+.forms .smr-80 .button { width: 80px; }
+.forms .smr-120{ padding-right: 120px; }
+.forms .smr-120 .button { width: 120px; }
+
+
+@icon append (right) :: prepend (left)
+-------------------------------------------------
+.forms .append-icon,
+.forms .prepend-icon{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width:100%;
+}
+
+.forms .append-icon .field-icon,
+.forms .prepend-icon .field-icon{
+    top:0;
+    z-index:4;
+    width:42px;
+    height:42px;
+    color: inherit;
+    line-height:42px;
+    position:absolute;
+    text-align: center;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+}
+
+.forms .append-icon .field-icon i,
+.forms .prepend-icon .field-icon i{
+    position:relative;
+    font-size:14px;
+}
+
+.forms .prepend-icon .field-icon{ left:0;  }
+.forms .append-icon .field-icon{ right:0; }
+.forms .prepend-icon > input,
+.forms .prepend-icon > textarea{ padding-left:36px; }
+.forms .append-icon > input,
+.forms .append-icon > textarea{ padding-right:36px; padding-left:10px;  }
+.forms .append-icon > textarea{ padding-right:36px; }
+
+@tooltips on inputs + textareas
+-------------------------------------------------
+.forms .tooltip {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    color: #fff;
+    width: 184px;
+    left: -9999px;
+    top:auto;
+    font-size: 11px;
+    font-weight:normal;
+    background: #333333;
+    -webkit-transition: margin 0.6s, opacity 0.6s;
+    -moz-transition: margin 0.6s, opacity 0.6s;
+    -ms-transition: margin 0.6s, opacity 0.6s;
+    -o-transition: margin 0.6s, opacity 0.6s;
+    transition: margin 0.6s, opacity 0.6s;
+}
+
+.forms .tooltip > em{ padding:12px; font-style:normal; display:block; position:static; }
+.forms .tooltip:after { content: ''; position: absolute; }
+.forms .gui-input:focus + .tooltip,
+.forms .gui-textarea:focus + .tooltip { opacity: 1; z-index: 999; }
+
+@tooltip left
+-------------------------------------------------
+.forms .tip-left { top:1px; margin-right:-20px; }
+.forms .tip-left:after {
+    top:12px;
+    left: 100%;
+    border-left: 8px solid #333333;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.forms .gui-input:focus + .tip-left,
+.forms .gui-textarea:focus + .tip-left {
+    margin-right:5px;
+    right: 100%;
+    left: auto;
+}
+
+@tooltip right
+-------------------------------------------------
+.forms .tip-right { top:1px; margin-left:-20px; }
+.forms .tip-right:after {
+    top:12px;
+    right: 100%;
+    border-right: 8px solid #333333;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.forms .gui-input:focus + .tip-right,
+.forms .gui-textarea:focus + .tip-right { left: 100%; margin-left:5px; }
+
+@tooltip right-top
+-------------------------------------------------
+.forms .tip-right-top { bottom: 100%; margin-bottom: -20px; }
+.forms .tip-right-top:after {
+    top: 100%;
+    right: 12px;
+    border-top: 8px solid #333333;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.forms .gui-input:focus + .tip-right-top,
+.forms .gui-textarea:focus + .tip-right-top {
+    right: 0;
+    left: auto;
+    margin-bottom: 10px;
+}
+
+@tooltip left-top
+-------------------------------------------------
+.forms .tip-left-top { bottom: 100%; margin-bottom: -20px; }
+.forms .tip-left-top:after {
+    top: 100%;
+    left: 12px;
+    border-top: 8px solid #333333;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.forms .gui-input:focus + .tip-left-top,
+.forms .gui-textarea:focus + .tip-left-top {
+    left: 0;
+    right: auto;
+    margin-bottom: 10px;
+}
+
+@tooltip right-bottom
+-------------------------------------------------
+.forms .tip-right-bottom { top: 100%; margin-top: -20px; }
+.forms .tip-right-bottom:after {
+    right: 12px;
+    bottom: 100%;
+    border-bottom: 8px solid #333333;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.forms .gui-input:focus + .tip-right-bottom,
+.forms .gui-textarea:focus + .tip-right-bottom {
+    margin-top: 10px;
+    left: auto;
+    right: 0;
+}
+
+@tooltip left-bottom
+-------------------------------------------------
+.forms .tip-left-bottom { top: 100%; margin-top: -20px; }
+.forms .tip-left-bottom:after {
+    left: 12px;
+    bottom: 100%;
+    border-bottom: 8px solid #333333;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.forms .gui-input:focus + .tip-left-bottom,
+.forms .gui-textarea:focus + .tip-left-bottom {
+    margin-top:10px;
+    right: auto;
+    left: 0;
+}
+
+@lists
+--------------------------------------------------------------
+.forms .smart-list{ list-style:none; margin:0; padding:0; }
+.forms .smart-list li{ margin-bottom:20px; }
+
+@notification messages | info | error | warning | success
+--------------------------------------------------------------
+.forms .form-msg{ display:none; }
+.forms .notification { color: #444; padding:15px; position:relative; }
+.forms .notification p{ margin:0; padding:0 15px; padding-left:5px; line-height:normal;  }
+.forms .notification .close-btn{
+    margin-top: -7px;
+    padding: inherit;
+    position: absolute;
+    text-decoration:none;
+    font: bold 20px/20px Arial, sans-serif;
+    opacity: 0.65;
+    color: inherit;
+    display: block;
+    right:1px;
+    top:14%;
+}
+
+.forms .notification .close-btn:hover{ opacity: 1; }
+.forms .alert-info { color:#163161; background-color: #cfe6fc; }
+.forms .alert-success { color:#336633; background-color: #d2f7ad; }
+.forms .alert-warning { color: #CC6600; background-color: #fae7a2; }
+.forms .alert-error { color:#990000; background-color: #FBDBCF; }
+
+@validaion - error state
+-------------------------------------
+.forms .state-error .gui-input,
+.forms .state-error .gui-textarea,
+.forms .state-error.select > select,
+.forms .state-error.select-multiple > select,
+.forms .state-error input:hover + .checkbox,
+.forms .state-error input:hover + .radio,
+.forms .state-error input:focus + .checkbox,
+.forms .state-error input:focus + .radio,
+.forms .state-error .checkbox,
+.forms .state-error .radio{
+    background:#FEE9EA;
+    border-color:#DE888A;
+}
+
+.forms .state-error .gui-input:focus,
+.forms .state-error .gui-textarea:focus,
+.forms .state-error.select > select:focus,
+.forms .state-error.select-multiple > select:focus{
+    -webkit-box-shadow:0px 0px 3px #DE888A inset;
+    -moz-box-shadow:0px 0px 3px #DE888A inset;
+    -o-box-shadow:0px 0px 3px #DE888A inset;
+    box-shadow:0px 0px 3px #DE888A inset;
+}
+
+.forms .state-error .gui-input ~ .field-icon i,
+.forms .state-error .gui-textarea ~ .field-icon i{  color: #DE888A; }
+.forms .state-error.select .arrow { color: #DE888A; }
+.forms .state-error.select > select:focus + .arrow{ color:#DE888A; }
+.forms .state-error .gui-input ~ .input-hint,
+.forms .state-error.file .gui-file:hover + .gui-input,
+.forms .state-error .gui-textarea ~ .input-hint { border-color:#DE888A; }
+.forms .state-error + em{
+    display: block!important;
+    margin-top: 6px;
+    padding: 0 3px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+    line-height: normal;
+    font-size:0.85em;
+    color:#DE888A;
+}
+
+@validaion - success state
+--------------------------------------------------
+.forms .state-success .gui-input,
+.forms .state-success .gui-textarea,
+.forms .state-success.select > select,
+.forms .state-success.select-multiple > select,
+.forms .state-success input:hover + .checkbox,
+.forms .state-success input:hover + .radio,
+.forms .state-success input:focus + .checkbox,
+.forms .state-success input:focus + .radio,
+.forms .state-success .checkbox,
+.forms .state-success .radio{
+    background:#F0FEE9;
+    border-color:#A5D491;
+}
+
+.forms .state-success .gui-input:focus,
+.forms .state-success .gui-textarea:focus,
+.forms .state-success.select > select:focus,
+.forms .state-success.select-multiple > select:focus{
+    -webkit-box-shadow:0px 0px 3px #A5D491 inset;
+    -moz-box-shadow:0px 0px 3px #A5D491 inset;
+    -o-box-shadow:0px 0px 3px #A5D491 inset;
+    box-shadow:0px 0px 3px #A5D491 inset;
+}
+
+.forms .state-success .gui-input ~ .field-icon i,
+.forms .state-success .gui-textarea ~ .field-icon i{  color: #A5D491; }
+.forms .state-success.select .arrow { color: #A5D491; }
+.forms .state-success.select > select:focus + .arrow{ color:#A5D491; }
+.forms .state-success .gui-input ~ .input-hint,
+.forms .state-success.file .gui-file:hover + .gui-input,
+.forms .state-success .gui-textarea ~ .input-hint { border-color:#A5D491; }
+
+@disabled state
+-----------------------------------------------
+.forms .button[disabled],
+.forms .state-disabled .button,
+.forms input[disabled] + .radio,
+.forms input[disabled] + .checkbox,
+.forms .switch > input[disabled] + label{
+    cursor: default;
+    opacity:0.5;
+}
+
+.forms .gui-input[disabled],
+.forms .gui-textarea[disabled],
+.forms .select > select[disabled],
+.forms .select-multiple select[disabled],
+.forms .gui-input[disabled] ~ .input-hint,
+.forms .file .gui-file[disabled] + .gui-input,
+.forms .file .gui-file[disabled]:hover + .gui-input,
+.forms .gui-textarea[disabled] ~ .input-hint {
+    background-color: #f4f6f6;
+    border-color: #d5dbdb!important;
+    cursor: default;
+    color: #d5dbdb;
+    opacity:0.7;
+}
+
+.forms input[disabled] ~ .field-icon i,
+.forms textarea[disabled] ~ .field-icon i,
+.forms .select > select[disabled] + .arrow{
+    opacity:0.4;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+/***********************************************************************/
+/***********************************************************************/
+/* 공통                                                                */
+/***********************************************************************/
+/***********************************************************************/
+html,
+body { height: 100%;}
+p{line-height: 1.8;}
+
+
+
+
+/*****************************************************/
+/* TOP                                               */
+/*****************************************************/
+.skip{position:absolute; top:0;left:0;width:1px;height:1px;overflow:hidden;visibility:hidden;font-size:0;line-height:0}
+
+#top {
+    background: #fdfdfd;
+    color: #999;
+    padding: 6px 0;
+    line-height: 25px;
+    border-bottom: 1px solid #f5f5f5;
+    letter-spacing: -0.02em;
+    a:hover   {color: inherit}
+    a:link    {color: #999}
+    a:visited {color: #999}
+    h1 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+      margin-right: 20px;
+      padding: 7px 0;
+      .siteTitle img{height: 15px}
+    }
+    .topMenu {
+      padding:0px;
+      margin-top: 4px;
+      margin-bottom: 0px;
+    }
+    .member {
+      padding:0;
+      margin-top: 4px;
+      margin-bottom: 0px;
+    }
+}
+ 
+
+
+/*****************************************************/
+/* GNB                                               */
+/*****************************************************/
+#GNB {margin: 0;padding: 30px 0  }
+#GNB .navbar-brand {min-width:220px;padding: 0; }
+#GNB .navbar-brand img {float:left;height: 60px}
+#GNB .navbar-brand h2 {font-size: 26px; font-weight: bold;margin: 10px;     }
+#GNB .dep1>li {font-weight: bold;margin-right: 30px }
+
+.depth2Title {padding: 20px 0;background-color: #fcfcfc;border-top: 1px solid #eee;border-bottom: 1px solid #eee;margin-bottom: 30px;}
+.depth2Title h2{margin: 0;line-height: 40px;  font-size: 20px;color: #666;font-weight: 400; }
+.depth2Title .bcrumb{color: #999;margin-top: 15px;}
+.depth2Title .bcrumb a{color: #999;}
+
+
+
+/*****************************************************/
+/* sidebar                                           */
+/*****************************************************/
+#sidebar {color: #888}
+#sidebar .category a {color: #888}
+
+/*****************************************************/
+/* MAIN                                           */
+/*****************************************************/
+#main {
+
+}
+
+/*****************************************************/
+/* FOOTER                                            */
+/*****************************************************/
+#footer {
+
+
+}
+
+
+
+/*****************************************************/
+/* ETC                                               */
+/*****************************************************/
+
+/*화면상단으로 이동*/
+#toTop {
+    bottom: 10px;
+    right: 100px;
+    z-index:1030;
+    width: 60px;
+    text-align: center;
+    position: fixed;
+    cursor: pointer;
+    display: none;
+    color: @blue;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+    padding: 5px;
+    i {font-size: 2em;}
+}
+#toTop:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+
+/*****************************************************/
+/* XE 기본 스타일의 변경                             */
+/*****************************************************/
+.x .x_input-append a.x_add-on,
+.x input[type="text"],
+.x input[type="password"],
+.x input[type="datetime"],
+.x input[type="datetime-local"],
+.x input[type="date"],
+.x input[type="month"],
+.x input[type="time"],
+.x input[type="week"],
+.x input[type="number"],
+.x input[type="email"],
+.x input[type="url"],
+.x input[type="search"],
+.x input[type="tel"],
+.x input[type="color"] {
+  height: 30px !important;
+  line-height: 30px !important;
+}
+.x .x_input-append a.x_add-on {
+  min-width: 30px;
+}
+/* EDITOR */
+.xpress-editor .fileUploader .fileUploadControl .text {
+  text-decoration: none !important;
+  border: 1px #999 solid;
+  padding: 2px 6px 4px;
+  background-color: #fff;
+}
