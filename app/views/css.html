@@ -1,3 +1,25 @@
-<p><i class="fa fa-area-chart"></i> This is the about dddddddddddddd view.</p>
+<div class="col-xs-12 col-sm-9">
+  <div id="Lists" class="heading_1">
+    <h2><i class="fa fa-th-large color"></i> CSS</h2>
+  </div>
 
+  <div ng-include="'./views/css/lists.html'"></div>
+  <div ng-include="'./views/css/highlights.html'"></div>
+  <div ng-include="'./views/css/buttons.html'"></div>
+  <div ng-include="'./views/css/badge_label.html'"></div>
+</div>
+
+
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+  <ul>
+    <li class="list-group-item"><a ng-click="scrollTo('Lists')">Lists</a>
+    </li>
+    <li class="list-group-item"><a ng-click="scrollTo('Highlights')">Highlights</a>
+    </li>
+    <li class="list-group-item"><a ng-click="scrollTo('Buttons')">Buttons</a>
+    </li>
+    <li class="list-group-item"><a ng-click="scrollTo('badge_label')">badge & label</a>
+    </li>
+  </ul>
+</div>
 
